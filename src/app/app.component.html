@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  <span>{{ title }}</span>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened="true">
+    <mat-nav-list>
+      <h3 matSubHeader>Channels</h3>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngFor="let channel of channels" [routerLink] = "['channels/', channel]">
+        #{{ channel }}
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <div style="height: 500px;">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>
